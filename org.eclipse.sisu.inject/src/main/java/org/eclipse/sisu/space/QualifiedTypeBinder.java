@@ -17,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.Mediator;
 import org.eclipse.sisu.inject.BeanLocator;
@@ -48,7 +48,7 @@ public final class QualifiedTypeBinder
         boolean hasJsr299Typed;
         try
         {
-            hasJsr299Typed = javax.enterprise.inject.Typed.class.isAnnotation();
+            hasJsr299Typed = jakarta.enterprise.inject.Typed.class.isAnnotation();
         }
         catch ( final LinkageError e )
         {
@@ -216,7 +216,7 @@ public final class QualifiedTypeBinder
      */
     private void bindProviderType( final Class<?> providerType )
     {
-        final TypeLiteral[] args = resolveTypeArguments( providerType, javax.inject.Provider.class );
+        final TypeLiteral[] args = resolveTypeArguments( providerType, jakarta.inject.Provider.class );
         if ( args.length != 1 )
         {
             binder.addError( providerType + " has wrong number of type arguments" );
@@ -367,7 +367,7 @@ public final class QualifiedTypeBinder
 
     private static Named getBindingName( final Class<?> qualifiedType )
     {
-        final javax.inject.Named jsr330 = qualifiedType.getAnnotation( javax.inject.Named.class );
+        final jakarta.inject.Named jsr330 = qualifiedType.getAnnotation( jakarta.inject.Named.class );
         if ( null != jsr330 )
         {
             try
@@ -410,7 +410,7 @@ public final class QualifiedTypeBinder
         {
             if ( HAS_JSR299_TYPED )
             {
-                final javax.enterprise.inject.Typed typed = c.getAnnotation( javax.enterprise.inject.Typed.class );
+                final jakarta.enterprise.inject.Typed typed = c.getAnnotation( jakarta.enterprise.inject.Typed.class );
                 if ( null != typed )
                 {
                     return typed.value().length > 0 ? typed.value() : c.getInterfaces();
@@ -427,7 +427,7 @@ public final class QualifiedTypeBinder
 
     private static boolean isSingleton( final Class<?> type )
     {
-        return type.isAnnotationPresent( javax.inject.Singleton.class )
+        return type.isAnnotationPresent( jakarta.inject.Singleton.class )
             || type.isAnnotationPresent( com.google.inject.Singleton.class );
     }
 

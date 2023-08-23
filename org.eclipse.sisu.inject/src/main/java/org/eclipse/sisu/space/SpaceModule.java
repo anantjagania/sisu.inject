@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import com.google.inject.Binder;
 import com.google.inject.Key;

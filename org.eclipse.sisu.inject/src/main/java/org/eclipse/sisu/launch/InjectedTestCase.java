@@ -8,15 +8,24 @@
  * Contributors:
  *   Stuart McCulloch (Sonatype, Inc.) - initial API and implementation
  *******************************************************************************/
+
 package org.eclipse.sisu.launch;
 
+import com.google.inject.Binder;
+import com.google.inject.Guice;
+import com.google.inject.Key;
+import com.google.inject.Module;
+import com.google.inject.name.Names;
+
+import jakarta.inject.Inject;
+
 import java.io.File;
-import java.lang.annotation.Annotation;
+
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-import javax.inject.Inject;
+import java.lang.annotation.Annotation;
 
 import org.eclipse.sisu.inject.MutableBeanLocator;
 import org.eclipse.sisu.space.BeanScanning;
@@ -26,21 +35,10 @@ import org.eclipse.sisu.space.URLClassSpace;
 import org.eclipse.sisu.wire.ParameterKeys;
 import org.eclipse.sisu.wire.WireModule;
 
-import com.google.inject.Binder;
-import com.google.inject.Guice;
-import com.google.inject.Key;
-import com.google.inject.Module;
-import com.google.inject.name.Names;
-
-import junit.framework.TestCase;
-
 /**
- * Abstract JUnit3 {@link TestCase} that automatically binds and injects itself.
+ * Abstract JUnit5 that automatically binds and injects itself.
  */
-public abstract class InjectedTestCase
-    extends TestCase
-    implements Module
-{
+public abstract class InjectedTestCase implements Module {
     // ----------------------------------------------------------------------
     // Implementation fields
     // ----------------------------------------------------------------------
@@ -54,49 +52,41 @@ public abstract class InjectedTestCase
     // Setup
     // ----------------------------------------------------------------------
 
-    @Override
     protected void setUp()
-        throws Exception
-    {
-        Guice.createInjector( new WireModule( new SetUpModule(), spaceModule() ) );
+      throws Exception {
+        Guice.createInjector(new WireModule(new SetUpModule(), spaceModule()));
     }
 
-    @Override
     protected void tearDown()
-        throws Exception
-    {
+      throws Exception {
         locator.clear();
     }
 
     final class SetUpModule
-        implements Module
-    {
-        public void configure( final Binder binder )
-        {
-            binder.install( InjectedTestCase.this );
+      implements Module {
+
+        public void configure(final Binder binder) {
+            binder.install(InjectedTestCase.this);
 
             final Properties properties = new Properties();
-            properties.put( "basedir", getBasedir() );
-            InjectedTestCase.this.configure( properties );
+            properties.put("basedir", getBasedir());
+            InjectedTestCase.this.configure(properties);
 
-            binder.bind( ParameterKeys.PROPERTIES ).toInstance( properties );
+            binder.bind(ParameterKeys.PROPERTIES).toInstance(properties);
 
-            binder.requestInjection( InjectedTestCase.this );
+            binder.requestInjection(InjectedTestCase.this);
         }
     }
 
-    public SpaceModule spaceModule()
-    {
-        return new SpaceModule( space(), scanning() );
+    public SpaceModule spaceModule() {
+        return new SpaceModule(space(), scanning());
     }
 
-    public ClassSpace space()
-    {
-        return new URLClassSpace( getClass().getClassLoader() );
+    public ClassSpace space() {
+        return new URLClassSpace(getClass().getClassLoader());
     }
 
-    public BeanScanning scanning()
-    {
+    public BeanScanning scanning() {
         return BeanScanning.CACHE;
     }
 
@@ -106,21 +96,19 @@ public abstract class InjectedTestCase
 
     /**
      * Custom injection bindings.
-     * 
+     *
      * @param binder The Guice binder
      */
-    public void configure( final Binder binder )
-    {
+    public void configure(final Binder binder) {
         // place any per-test bindings here...
     }
 
     /**
      * Custom property values.
-     * 
+     *
      * @param properties The test properties
      */
-    public void configure( final Properties properties )
-    {
+    public void configure(final Properties properties) {
         // put any per-test properties here...
     }
 
@@ -128,35 +116,29 @@ public abstract class InjectedTestCase
     // Container lookup methods
     // ----------------------------------------------------------------------
 
-    public final <T> T lookup( final Class<T> type )
-    {
-        return lookup( Key.get( type ) );
+    public final <T> T lookup(final Class<T> type) {
+        return lookup(Key.get(type));
     }
 
-    public final <T> T lookup( final Class<T> type, final String name )
-    {
-        return lookup( type, Names.named( name ) );
+    public final <T> T lookup(final Class<T> type, final String name) {
+        return lookup(type, Names.named(name));
     }
 
-    public final <T> T lookup( final Class<T> type, final Class<? extends Annotation> qualifier )
-    {
-        return lookup( Key.get( type, qualifier ) );
+    public final <T> T lookup(final Class<T> type, final Class<? extends Annotation> qualifier) {
+        return lookup(Key.get(type, qualifier));
     }
 
-    public final <T> T lookup( final Class<T> type, final Annotation qualifier )
-    {
-        return lookup( Key.get( type, qualifier ) );
+    public final <T> T lookup(final Class<T> type, final Annotation qualifier) {
+        return lookup(Key.get(type, qualifier));
     }
 
     // ----------------------------------------------------------------------
     // Container resource methods
     // ----------------------------------------------------------------------
 
-    public final String getBasedir()
-    {
-        if ( null == basedir )
-        {
-            basedir = System.getProperty( "basedir", new File( "" ).getAbsolutePath() );
+    public final String getBasedir() {
+        if (null == basedir) {
+            basedir = System.getProperty("basedir", new File("").getAbsolutePath());
         }
         return basedir;
     }
@@ -165,9 +147,8 @@ public abstract class InjectedTestCase
     // Implementation methods
     // ----------------------------------------------------------------------
 
-    private <T> T lookup( final Key<T> key )
-    {
-        final Iterator<? extends Entry<Annotation, T>> i = locator.locate( key ).iterator();
+    private <T> T lookup(final Key<T> key) {
+        final Iterator<? extends Entry<Annotation, T>> i = locator.locate(key).iterator();
         return i.hasNext() ? i.next().getValue() : null;
     }
 }

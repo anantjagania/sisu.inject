@@ -19,7 +19,7 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import com.google.inject.ImplementedBy;
 import com.google.inject.Key;

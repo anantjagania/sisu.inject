@@ -16,7 +16,7 @@
 
   <groupId>org.eclipse.sisu</groupId>
   <artifactId>sisu-inject</artifactId>
-  <version>0.9.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <name>Sisu Inject</name>
@@ -115,14 +115,14 @@
   </distributionManagement>
 
   <properties>
-    <maven.compiler.release>8</maven.compiler.release>
+    <maven.compiler.release>17</maven.compiler.release>
     <!-- Set to same version as release target for consistency -->
-    <maven.compiler.source>1.${maven.compiler.release}</maven.compiler.source>
-    <maven.compiler.target>1.${maven.compiler.release}</maven.compiler.target>
+    <maven.compiler.source>${maven.compiler.release}</maven.compiler.source>
+    <maven.compiler.target>${maven.compiler.release}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <mavenBuildVersion>3.6.3</mavenBuildVersion>
-    <javaBuildVersion>11</javaBuildVersion>
+    <javaBuildVersion>17</javaBuildVersion>
   </properties>
 
   <build>

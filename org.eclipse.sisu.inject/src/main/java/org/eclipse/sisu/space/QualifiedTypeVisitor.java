@@ -12,7 +12,7 @@ package org.eclipse.sisu.space;
 
 import java.net.URL;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import org.eclipse.sisu.inject.Logs;
 

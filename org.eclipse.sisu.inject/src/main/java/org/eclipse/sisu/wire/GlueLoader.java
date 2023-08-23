@@ -15,7 +15,7 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.concurrent.ConcurrentMap;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.inject.Weak;
 

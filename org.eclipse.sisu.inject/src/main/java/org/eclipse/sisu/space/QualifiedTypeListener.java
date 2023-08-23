@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.sisu.space;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import com.google.inject.Binder;
 

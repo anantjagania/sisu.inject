@@ -14,7 +14,7 @@ import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.BeanEntry;
 

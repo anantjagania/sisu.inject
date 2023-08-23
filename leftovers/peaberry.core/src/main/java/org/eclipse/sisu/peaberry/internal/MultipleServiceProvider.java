@@ -14,7 +14,7 @@ package org.eclipse.sisu.peaberry.internal;
 import static org.eclipse.sisu.peaberry.internal.DirectServiceFactory.directServices;
 import static org.eclipse.sisu.peaberry.internal.ServiceProxyFactory.serviceProxies;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.peaberry.builders.ProxyProvider;
 

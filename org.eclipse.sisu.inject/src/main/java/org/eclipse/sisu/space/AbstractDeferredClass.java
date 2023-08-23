@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.sisu.space;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.inject.DeferredClass;
 import org.eclipse.sisu.inject.DeferredProvider;

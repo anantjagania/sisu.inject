@@ -13,7 +13,7 @@ package org.eclipse.sisu.launch;
 import java.util.Collections;
 import java.util.Map;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.Parameters;
 import org.eclipse.sisu.inject.MutableBeanLocator;

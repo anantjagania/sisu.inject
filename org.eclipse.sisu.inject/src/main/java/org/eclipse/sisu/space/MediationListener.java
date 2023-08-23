@@ -14,7 +14,7 @@ import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.Mediator;
 import org.eclipse.sisu.inject.BeanLocator;

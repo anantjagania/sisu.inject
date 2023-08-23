@@ -58,7 +58,7 @@ public final class BeanListener
 
         for ( final BeanProperty<?> property : new BeanProperties( type.getRawType() ) )
         {
-            if ( property.getAnnotation( javax.inject.Inject.class ) != null
+            if ( property.getAnnotation( jakarta.inject.Inject.class ) != null
                 || property.getAnnotation( com.google.inject.Inject.class ) != null )
             {
                 continue; // these properties will have already been injected by Guice

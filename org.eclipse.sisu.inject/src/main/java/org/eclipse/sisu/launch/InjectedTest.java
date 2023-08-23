@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.inject.MutableBeanLocator;
 import org.eclipse.sisu.space.BeanScanning;
@@ -25,8 +25,6 @@ import org.eclipse.sisu.space.SpaceModule;
 import org.eclipse.sisu.space.URLClassSpace;
 import org.eclipse.sisu.wire.ParameterKeys;
 import org.eclipse.sisu.wire.WireModule;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.testng.annotations.AfterMethod;
@@ -58,8 +56,6 @@ public abstract class InjectedTest
     // Setup
     // ----------------------------------------------------------------------
 
-    @Before
-    @BeforeMethod
     @BeforeEach
     public void setUp()
         throws Exception
@@ -67,8 +63,6 @@ public abstract class InjectedTest
         Guice.createInjector( new WireModule( new SetUpModule(), spaceModule() ) );
     }
 
-    @After
-    @AfterMethod
     @AfterEach
     public void tearDown()
         throws Exception

@@ -12,7 +12,7 @@ package org.eclipse.sisu.inject;
 
 import java.lang.annotation.Annotation;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import org.eclipse.sisu.BeanEntry;
 import org.eclipse.sisu.Mediator;

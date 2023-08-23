@@ -29,8 +29,8 @@ final class LifecycleBuilder
         boolean hasJsr250Annotations;
         try
         {
-            hasJsr250Annotations = javax.annotation.PostConstruct.class.isAnnotation()
-                    && javax.annotation.PreDestroy.class.isAnnotation();
+            hasJsr250Annotations = jakarta.annotation.PostConstruct.class.isAnnotation()
+                    && jakarta.annotation.PreDestroy.class.isAnnotation();
         }
         catch ( final LinkageError e )
         {
@@ -133,11 +133,11 @@ final class LifecycleBuilder
         {
             if ( PostConstruct.class.equals( annotationClass ) )
             {
-                result = method.isAnnotationPresent( javax.annotation.PostConstruct.class );
+                result = method.isAnnotationPresent( jakarta.annotation.PostConstruct.class );
             }
             else if ( PreDestroy.class.equals( annotationClass ) )
             {
-                result = method.isAnnotationPresent( javax.annotation.PreDestroy.class );
+                result = method.isAnnotationPresent( jakarta.annotation.PreDestroy.class );
             }
         }
         return result;

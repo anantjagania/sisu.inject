@@ -13,7 +13,7 @@ package org.eclipse.sisu.wire;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import com.google.inject.Injector;
 import com.google.inject.Singleton;

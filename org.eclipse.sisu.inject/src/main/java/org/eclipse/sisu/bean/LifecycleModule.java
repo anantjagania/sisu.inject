@@ -21,8 +21,8 @@ import com.google.inject.spi.TypeListener;
 
 /**
  * Guice {@link Module} that provides lifecycle management by following {@link org.eclipse.sisu.PostConstruct}
- * and {@link org.eclipse.sisu.PreDestroy} annotations, or corresponding JSR250 {@link javax.annotation.PostConstruct}
- * and {@link javax.annotation.PreDestroy} annotations. The lifecycle can be controlled with the associated
+ * and {@link org.eclipse.sisu.PreDestroy} annotations, or corresponding JSR250 {@link jakarta.annotation.PostConstruct}
+ * and {@link jakarta.annotation.PreDestroy} annotations. The lifecycle can be controlled with the associated
  * {@link BeanManager}.
  */
 public final class LifecycleModule

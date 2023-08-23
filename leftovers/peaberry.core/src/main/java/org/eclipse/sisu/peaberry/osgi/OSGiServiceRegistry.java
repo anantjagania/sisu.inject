@@ -13,7 +13,7 @@ package org.eclipse.sisu.peaberry.osgi;
 
 import static org.eclipse.sisu.peaberry.Peaberry.NATIVE_FILTER_HINT;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.peaberry.Export;
 import org.eclipse.sisu.peaberry.Import;

@@ -12,7 +12,7 @@ package org.eclipse.sisu.inject;
 
 import java.lang.annotation.Annotation;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.BeanEntry;
 import org.eclipse.sisu.Description;
@@ -134,10 +134,10 @@ final class LazyBeanEntry<Q extends Annotation, T>
     // ----------------------------------------------------------------------
 
     /**
-     * Implementation of @{@link javax.inject.Named} that can also act like @{@link com.google.inject.name.Named}.
+     * Implementation of @{@link jakarta.inject.Named} that can also act like @{@link com.google.inject.name.Named}.
      */
     private static final class JsrNamed
-        implements com.google.inject.name.Named, javax.inject.Named
+        implements com.google.inject.name.Named, jakarta.inject.Named
     {
         // ----------------------------------------------------------------------
         // Implementation fields
@@ -165,7 +165,7 @@ final class LazyBeanEntry<Q extends Annotation, T>
 
         public Class<? extends Annotation> annotationType()
         {
-            return javax.inject.Named.class;
+            return jakarta.inject.Named.class;
         }
 
         @Override
@@ -185,9 +185,9 @@ final class LazyBeanEntry<Q extends Annotation, T>
             {
                 return value.equals( ( (com.google.inject.name.Named) rhs ).value() );
             }
-            if ( rhs instanceof javax.inject.Named )
+            if ( rhs instanceof jakarta.inject.Named )
             {
-                return value.equals( ( (javax.inject.Named) rhs ).value() );
+                return value.equals( ( (jakarta.inject.Named) rhs ).value() );
             }
             return false;
         }
@@ -195,7 +195,7 @@ final class LazyBeanEntry<Q extends Annotation, T>
         @Override
         public String toString()
         {
-            return "@" + javax.inject.Named.class.getName() + "(value=" + value + ")";
+            return "@" + jakarta.inject.Named.class.getName() + "(value=" + value + ")";
         }
     }
 }

@@ -73,7 +73,7 @@ final class BeanProviders
     {
         final TypeLiteral<V> type = key.getTypeLiteral();
         final Class<?> clazz = type.getRawType();
-        if ( javax.inject.Provider.class != clazz && com.google.inject.Provider.class != clazz )
+        if ( jakarta.inject.Provider.class != clazz && com.google.inject.Provider.class != clazz )
         {
             return beanEntriesOf( key );
         }

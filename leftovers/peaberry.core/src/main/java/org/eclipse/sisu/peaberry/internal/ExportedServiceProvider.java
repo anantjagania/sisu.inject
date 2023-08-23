@@ -11,7 +11,7 @@
 
 package org.eclipse.sisu.peaberry.internal;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.peaberry.Export;
 import org.eclipse.sisu.peaberry.builders.ExportProvider;

@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * release resources that it has been holding.
  * <p>
  * This annotation is Sisu specific annotation, that has same semantics as
- * {@link javax.annotation.PreDestroy} annotation has, and may be used
+ * {@link jakarta.annotation.PreDestroy} annotation has, and may be used
  * interchangeably.
  * <p>
  * To use annotation {@link org.eclipse.sisu.bean.LifecycleModule} needs to be

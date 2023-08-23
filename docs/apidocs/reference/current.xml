@@ -44,7 +44,7 @@
 >
 </method>
 <method name="getProvider"
- return="javax.inject.Provider&lt;T&gt;"
+ return="jakarta.inject.Provider&lt;T&gt;"
  abstract="true"
  native="false"
  synchronized="false"
@@ -1183,7 +1183,7 @@
 </parameter>
 </method>
 <method name="getProviderInstance"
- return="javax.inject.Provider&lt;?&gt;"
+ return="jakarta.inject.Provider&lt;?&gt;"
  abstract="false"
  native="false"
  synchronized="false"
@@ -1196,7 +1196,7 @@
 </parameter>
 </method>
 <method name="lazy"
- return="javax.inject.Provider&lt;T&gt;"
+ return="jakarta.inject.Provider&lt;T&gt;"
  abstract="false"
  native="false"
  synchronized="false"
@@ -4152,7 +4152,7 @@
 >
 </constructor>
 <method name="getCompletions"
- return="java.lang.Iterable&lt;? extends javax.annotation.processing.Completion&gt;"
+ return="java.lang.Iterable&lt;? extends jakarta.annotation.processing.Completion&gt;"
  abstract="false"
  native="false"
  synchronized="false"
@@ -4256,7 +4256,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="_environment" type="javax.annotation.processing.ProcessingEnvironment">
+<parameter name="_environment" type="jakarta.annotation.processing.ProcessingEnvironment">
 </parameter>
 </method>
 <method name="process"
@@ -4271,7 +4271,7 @@
 >
 <parameter name="annotations" type="java.util.Set&lt;? extends javax.lang.model.element.TypeElement&gt;">
 </parameter>
-<parameter name="round" type="javax.annotation.processing.RoundEnvironment">
+<parameter name="round" type="jakarta.annotation.processing.RoundEnvironment">
 </parameter>
 </method>
 <method name="warn"

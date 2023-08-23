@@ -12,7 +12,7 @@ package org.eclipse.sisu.inject;
 
 import java.lang.annotation.Annotation;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import org.eclipse.sisu.Description;
 import org.eclipse.sisu.Priority;
@@ -53,7 +53,7 @@ final class Implementations
         boolean hasJsr250Priority;
         try
         {
-            hasJsr250Priority = javax.annotation.Priority.class.isAnnotation();
+            hasJsr250Priority = jakarta.annotation.Priority.class.isAnnotation();
         }
         catch ( final LinkageError e )
         {
@@ -136,7 +136,7 @@ final class Implementations
     @SuppressWarnings( "unchecked" )
     private static <T extends Annotation> T adaptJsr250( final Binding<?> binding, final Class<?> clazz )
     {
-        final javax.annotation.Priority jsr250 = clazz.getAnnotation( javax.annotation.Priority.class );
+        final jakarta.annotation.Priority jsr250 = clazz.getAnnotation( jakarta.annotation.Priority.class );
         return null != jsr250 ? (T) new PrioritySource( binding.getSource(), jsr250.value() ) : null;
     }
 

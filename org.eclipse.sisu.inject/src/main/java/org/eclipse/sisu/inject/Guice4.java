@@ -13,7 +13,7 @@ package org.eclipse.sisu.inject;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import javax.inject.Provider;
+import jakarta.inject.Provider;
 
 import com.google.inject.Binding;
 import com.google.inject.Scopes;

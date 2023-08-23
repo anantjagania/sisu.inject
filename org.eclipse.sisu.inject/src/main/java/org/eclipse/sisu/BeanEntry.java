@@ -13,8 +13,8 @@ package org.eclipse.sisu;
 import java.lang.annotation.Annotation;
 import java.util.Map.Entry;
 
-import javax.inject.Provider;
-import javax.inject.Qualifier;
+import jakarta.inject.Provider;
+import jakarta.inject.Qualifier;
 
 /**
  * Describes <b>Q</b>ualified bean implementations of <b>T</b>:<br>

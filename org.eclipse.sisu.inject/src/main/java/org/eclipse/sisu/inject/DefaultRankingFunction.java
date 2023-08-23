@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.sisu.inject;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.Priority;
 

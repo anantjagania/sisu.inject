@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 import org.eclipse.sisu.BeanEntry;
 import org.eclipse.sisu.Dynamic;

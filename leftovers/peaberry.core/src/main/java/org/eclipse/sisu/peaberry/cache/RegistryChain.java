@@ -14,7 +14,7 @@ package org.eclipse.sisu.peaberry.cache;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.peaberry.AttributeFilter;
 import org.eclipse.sisu.peaberry.Export;

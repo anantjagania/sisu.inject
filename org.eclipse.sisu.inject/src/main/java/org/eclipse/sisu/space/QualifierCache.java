@@ -13,7 +13,7 @@ package org.eclipse.sisu.space;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 /**
  * Caching {@link ClassVisitor} that maintains a map of known {@link Qualifier} annotations.

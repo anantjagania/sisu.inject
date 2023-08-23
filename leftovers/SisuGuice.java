@@ -16,7 +16,7 @@ import java.lang.reflect.Proxy;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.sisu.inject.BeanLocator;
 import org.eclipse.sisu.inject.Logs;

@@ -14,8 +14,8 @@ import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import javax.inject.Provider;
-import javax.inject.Qualifier;
+import jakarta.inject.Provider;
+import jakarta.inject.Qualifier;
 
 import com.google.inject.Key;
 import com.google.inject.TypeLiteral;

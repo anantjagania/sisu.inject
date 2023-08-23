@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
  * method is invoked by Sisu before the class is put into service.
  * <p>
  * This annotation is Sisu specific annotation, that has same semantics as
- * {@link javax.annotation.PostConstruct} annotation has, and may be used
+ * {@link jakarta.annotation.PostConstruct} annotation has, and may be used
  * interchangeably.
  * <p>
  * To use annotation {@link org.eclipse.sisu.bean.LifecycleModule} needs to be
